@@ -1,26 +1,28 @@
-<% if @article.errors.any? %>
-  <h2>The following errors prevented the article from being saved</h2>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_with(model: @article, local: true) do |f| %>
-
-  <p>
-    <%= f.label :title %><br/>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :description %><br/>
-    <%= f.text_area :description %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-
-<% end %>
+<div class="flex justify-center m-10 text-m text-left text-gray-500 dark:text-gray-400">
+  <% if @article.errors.any? %>
+    <h2>The following errors prevented the article from being saved</h2>
+    <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  
+  <%= form_with(model: @article, local: true) do |f| %>
+  
+    <p class="p-5">
+      <%= f.label :title %><br/>
+      <%= f.text_field :title %>
+    </p>
+  
+    <p class="p-5 pb-10">
+      <%= f.label :description %><br/>
+      <%= f.text_area :description %>
+    </p>
+  
+    <p class="text-white bg-indigo-400 hover:bg-violet-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 p-10">
+      <%= f.submit %>
+    </p>
+  
+  <% end %>
+</div>

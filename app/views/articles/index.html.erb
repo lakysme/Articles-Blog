@@ -1,35 +1,37 @@
-<h1>Articles listing page</h1>
+<h1 class="flex justify-center mb-10 text-3xl text-indigo-700 mt-9 font-mono">Articles listing page</h1>
 
-<% 
-#Criando uma tabela com HTML
-# Inicia com <tabel> </table>
-# <th></th> table head - colunas
-# <tr></tr> table row - linha
-# <td></td> table data -conteudo da celula 
-%>
+<% @articles.each do |article| %>
+  <div class="container mx-auto my-4 max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div class="p-5">
+          <a href="#">
+              <h5 class="mb-2 text-2xl font-bold tracking-tight text-indigo-700 dark:text-white hover:underline hover:text-indigo-400"><%= link_to article.title, article_path(article) %></h5>
+          </a>
+          <p class="mb-3 font-normal text-indigo-700 dark:text-gray-400 truncate"><%= article.description %></p>
+          <p class="mb-3 font-normal text-sm text-center italic text-indigo-700 dark:text-gray-400">By Lakysme Rocha</p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3">Actions</th>
-    </tr>
-  </thead>
+          <div class="flex justify-center mt-8">
+            <button type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none rounded-lg text-indigo-700 hover:bg-indigo-300 rounded-full border border-gray-200 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"><%= link_to 'Show', article_path(article) %></button>
 
-  <tbody>
-    <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.title %></td>
-        <td><%= article.description %></td>
-        <td><%= link_to 'Show', article_path(article) %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Delete', article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+            <button type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none rounded-lg text-indigo-700 hover:bg-indigo-300 rounded-full border border-gray-200 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"><%= link_to 'Edit', edit_article_path(article) %></button>
 
-<p>
+            <button type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none rounded-lg text-indigo-700 hover:bg-indigo-300 rounded-full border border-gray-200 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"><%= link_to 'Delete', article_path(article), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></button>
+          </div>  
+      </div>
+  </div>
+<% end %>
+
+<p class="flex justify-center text-xl font-mono my-10 text-indigo-500 hover:text-indigo-500/50">
   <%= link_to 'Create new article', new_article_path %>
 </p>
+
+<footer class="bg-violet-50 rounded-lg m-4">
+    <div class="w-full mx-auto container md:p-6 p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="https://github.com/lakysme" target="_blank" class="mr-4 hover:underline md:mr-6 ">Other projects</a>
+        </li>
+    </ul>
+    </div>
+</footer>

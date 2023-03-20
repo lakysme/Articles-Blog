@@ -1,11 +1,17 @@
-<div class="font-mono text-center">
-  <div class="container mx-auto bg-indigo-100 rounded-full font-mono">
-    <h1 class="text-5xl text-center pt-10">Wellcome to Alpha Blog</h1>
-    <p class="text-center pt-5 pb-10">The best article tracker</p>
+<div class="bg-none font-mono text-center text-indigo-900 bg-cover h-screen w-screen m-0">
+  <div class="container grid h-screen place-items-center mx-auto bg-indigo-100 bg-opacity-75 drop-shadow-xl rounded-full font-mono"  style="background-image: url('https://kartinkin.net/uploads/posts/2021-07/1626865482_4-kartinkin-com-p-nezhno-goluboi-fon-akvarel-krasivo-5.jpg')">
+    <h1 class="text-5xl text-center p-0 underline decoration-wavy decoration-4">Wellcome to Alpha Blog</h1>
+    <%# <p class="text-center text-2xl">The best article tracker</p> %>
   </div>
 
-  <div class="container text-center pt-10">
-    <%= link_to 'Articles listing', articles_path %> |
-    <%= link_to 'About page', about_path %>
-  </div>
-</div>
+<footer class="bg-violet-50 rounded-lg m-4">
+    <div class="w-full mx-auto container md:p-6 p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023. All Rights Reserved.
+    </span>
+    <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="https://github.com/lakysme" class="mr-4 hover:underline md:mr-6 ">Other projects</a>
+        </li>
+    </ul>
+    </div>
+</footer>
