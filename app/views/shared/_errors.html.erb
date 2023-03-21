@@ -1,0 +1,23 @@
+  <div class="container justify-center mx-auto mb-4 text-l text-red-500 bg-red-200/50 rounded-lg" role="alert">
+  
+    <% if @article.errors.any? %>
+      <h2>The following errors prevented the article from being saved</h2>
+      <ul class="mt-1.5 ml-4 list-disc list-inside">
+        <% @article.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+      <button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-52 mr-24 outline-none focus:outline-none" onclick="closeAlert(event)">
+        <span>×</span>
+      </button>
+    <% end %>
+  </div>
+  <script>
+    function closeAlert(event){
+      let element = event.target;
+      while(element.nodeName !== "BUTTON"){
+          element = element.parentNode;
+       }
+          element.parentNode.parentNode.removeChild(element.parentNode);
+    }
+  </script>
