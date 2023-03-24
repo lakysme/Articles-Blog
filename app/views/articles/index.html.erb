@@ -7,7 +7,7 @@
               <h5 class="mb-2 text-2xl font-bold tracking-tight text-indigo-700 dark:text-white hover:underline hover:text-indigo-400"><%= link_to article.title, article_path(article) %></h5>
           </a>
           <p class="mb-3 font-normal text-indigo-700 dark:text-gray-400 truncate"><%= article.description %></p>
-          <p class="mb-3 font-normal text-sm text-center italic text-indigo-700 dark:text-gray-400">By Lakysme Rocha</p>
+          <p class="mb-3 font-normal text-sm text-center italic text-indigo-700 dark:text-gray-400">By <%= article.user.username %></p>
 
           <p class="mb-3 font-normal text-sm text-center italic text-indigo-700">Created <%= time_ago_in_words(article.created_at) %> ago,
           edited <%= time_ago_in_words(article.updated_at) %> ago</p>

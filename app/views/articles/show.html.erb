@@ -1,8 +1,9 @@
 <h1 class="flex justify-center text-indigo-500 text-3xl mt-9 font-mono">Showing article details</h1>
 
 <div class="container justify-center mx-auto m-2 mt-5 p-6 py-10 h-auto rounded-lg space-y-4 text-m text-left text-indigo-700 text-lg bg-violet-200/50">
-  <p class="basis-1/2"><strong>Title: </strong><%= @article.title %></p>
-  <p class="basis-1/2"><strong>Description: </strong><%= @article.description %></p>
+  <p class="basis-1/3"><strong>Title: </strong><%= @article.title %></p>
+  <p class="basis-1/3"><strong>Description: </strong><%= @article.description %></p>
+  <p class="basis-1/3 text-center text-base">By <%= @article.user.username %></p>
 </div>
 
   <div class="flex space-x-4 justify-center text-indigo-500 text-xl font-mono my-10">
