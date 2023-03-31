@@ -1,0 +1,33 @@
+<h1 class="flex justify-center text-3xl mt-9 text-indigo-500 font-mono">Log in</h1>
+<div class="w-full">
+    
+<div class="container justify-center mx-auto">
+  <%= form_with(scope: :session, url:login_path, local: true) do |f| %>
+
+    <div class="mb-6">
+      <p class="block mb-2 text-xl font-medium text-indigo-600 dark:text-white"><%= f.label :email %></p>
+      <p class="bg-gray-50 border border-gray-300 text-indigo-500 text-sm rounded-lg focus:ring-violet-300 focus:border-violet-300 block w-full p-2.5" placeholder="Enter your email address"><%= f.email_field :email %></p>
+    </div>
+
+    <div class="mb-6">
+      <p class="block mb-2 text-xl font-medium text-indigo-600 dark:text-white"><%= f.label :password %></p>
+      <p class="bg-gray-50 border border-gray-300 text-indigo-500 text-sm rounded-lg focus:ring-violet-300 focus:border-violet-300 block w-full p-2.5" placeholder="Enter your password"><%= f.password_field :password %></p>
+    </div>
+
+    <div class="text-white text-base bg-indigo-400 hover:bg-violet-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center p-10"><%= f.submit "Log in" %>
+    </div>
+  <% end %>
+</div>
+    
+</div>
+<footer class="absolute inset-x-0 bottom-0 bg-violet-50 rounded-lg m-4">
+    <div class="w-full mx-auto container md:p-6 p-4 md:flex md:items-center md:justify-between">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023. All Rights Reserved.
+    </span>
+    <ul class="items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+        <li>
+            <a href="https://github.com/lakysme" class="mr-4 hover:underline md:mr-6 ">Other projects</a>
+        </li>
+    </ul>
+    </div>
+</footer>
