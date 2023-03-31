@@ -10,8 +10,16 @@
   </div>
   
   <h3 class="flex justify-center text-3xl mt-9 text-indigo-500 font-mono">Articles</h3>
+
+  <div class="apple_pagination flex justify-center tracking-widest text-indigo-700  font-mono text-xl mt-2">
+    <%= will_paginate @articles, :container => false %>
+  </div>
   
   <%= render 'articles/article' %>
+
+  <div class="apple_pagination flex justify-center tracking-widest text-indigo-700  font-mono text-xl mb-2">
+    <%= will_paginate @articles, :container => false %>
+  </div>
   
   <div class="w-full">
     <div class="flex justify-center font-mono text-indigo-500 hover:text-indigo-500/50 text-xl"><%= link_to 'Return to articles listing', articles_path %>

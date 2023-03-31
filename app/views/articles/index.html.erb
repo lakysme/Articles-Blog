@@ -1,6 +1,12 @@
 <h1 class="flex justify-center mb-10 text-3xl text-indigo-700 mt-9 font-mono">Articles listing page</h1>
 
-<%= render 'article' %>
+  <div class="flex justify-center tracking-widest text-indigo-700  font-mono text-xl">
+    <%= will_paginate @articles, :container => false %>
+  </div>
+  <%= render 'article' %>
+  <div class="flex justify-center tracking-widest text-indigo-700  font-mono text-xl">
+    <%= will_paginate @articles, :container => false %>
+  </div>
 
 <p class="flex justify-center text-xl font-mono my-10 text-indigo-500 hover:text-indigo-500/50">
   <%= link_to 'Create new article', new_article_path %>
