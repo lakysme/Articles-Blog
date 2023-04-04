@@ -1,25 +1,15 @@
 <h1 class="flex justify-center mb-10 text-3xl text-indigo-700 mt-9 font-mono">Articles listing page</h1>
 
-  <div class="flex justify-center tracking-widest text-indigo-700  font-mono text-xl">
-    <%= will_paginate @articles, :container => false %>
-  </div>
+<div class="flex justify-center tracking-widest text-indigo-700  font-mono text-xl">
+  <%= will_paginate @articles, :container => false %>
+</div>
   <%= render 'article' %>
-  <div class="flex justify-center tracking-widest text-indigo-700  font-mono text-xl">
-    <%= will_paginate @articles, :container => false %>
-  </div>
+<div class="flex justify-center tracking-widest text-indigo-700  font-mono text-xl">
+  <%= will_paginate @articles, :container => false %>
+</div>
 
 <p class="flex justify-center text-xl font-mono my-10 text-indigo-500 hover:text-indigo-500/50">
   <%= link_to 'Create new article', new_article_path %>
 </p>
 
-<footer class="bg-violet-50 rounded-lg m-4">
-    <div class="w-full mx-auto container md:p-6 p-4 md:flex md:items-center md:justify-between">
-      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023. All Rights Reserved.
-    </span>
-    <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
-        <li>
-            <a href="https://github.com/lakysme" target="_blank" class="mr-4 hover:underline md:mr-6 ">Other projects</a>
-        </li>
-    </ul>
-    </div>
-</footer>
+<%= render 'footer' %>

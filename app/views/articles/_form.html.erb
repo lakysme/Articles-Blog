@@ -1,19 +1,27 @@
 <div class="container justify-center mx-auto  m-10 text-m text-left text-gray-500 dark:text-gray-400">
   <%= render 'shared/errors', obj: @article %>
-    <%= form_with(model: @article, local: true) do |f| %>
-      <div class="p-5">
-        <p class="text-indigo-800 text-xl text-center"><%= f.label :title %></p>
-        <p class="block w-full p-2 text-indigo-800 border-none bg-violet-300/25 sm:text-xs"><%= f.text_field :title %></p>
-      </div>
+  <%= form_with(model: @article, local: true) do |f| %>
+    <div class="p-5">
+      <p class="text-indigo-800 text-xl text-center">
+        <%= f.label :title %>
+      </p>
+      <p class="block w-full p-2 text-indigo-800 border-none bg-violet-300/25 sm:text-xs">
+        <%= f.text_field :title %>
+      </p>
+    </div>
     
-      <div class="p-5 pb-10">
-        <p class="text-indigo-800 text-xl text-center"><%= f.label :description %></p>
-        <p class="block w-full p-2 text-indigo-800 border-none bg-violet-300/25 sm:text-xs"><%= f.text_area :description %></p>
-      </div>
+    <div class="p-5 pb-10">
+      <p class="text-indigo-800 text-xl text-center">
+        <%= f.label :description %>
+      </p>
+      <p class="block w-full p-2 text-indigo-800 border-none bg-violet-300/25 sm:text-xs">
+        <%= f.text_area :description %>
+      </p>
+    </div>
 
-      <div class="text-white bg-indigo-400 hover:bg-violet-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 p-10">
+    <div class="text-white bg-indigo-400 hover:bg-violet-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 p-10">
         <%= f.submit %>
-      </div>
+    </div>
 
-    <% end %>
+  <% end %>
 </div>
