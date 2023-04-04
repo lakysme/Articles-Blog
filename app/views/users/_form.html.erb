@@ -1,22 +1,36 @@
 <div class="container justify-center mx-auto">
   <%= render 'shared/errors', obj: @user %>
+
   <%= form_with(model: @user, local: true) do |f| %>
     <div class="mb-6">
-      <p class="block mb-2 text-xl font-medium text-indigo-600 dark:text-white"><%= f.label :username %></p>
-      <p class="bg-gray-50 border border-gray-300 text-indigo-500 text-sm rounded-lg focus:ring-violet-300 focus:border-violet-300 block w-full p-2.5" placeholder="Enter a username"><%= f.text_field :username %></p>
+      <p class="block mb-2 text-xl font-medium text-indigo-600 dark:text-white">
+        <%= f.label :username %>
+      </p>
+      <p class="bg-gray-50 border border-gray-300 text-indigo-500 text-sm rounded-lg focus:ring-violet-300 focus:border-violet-300 block w-full p-2.5" placeholder="Enter a username">
+        <%= f.text_field :username %>
+      </p>
     </div>
 
     <div class="mb-6">
-      <p class="block mb-2 text-xl font-medium text-indigo-600 dark:text-white"><%= f.label :email %></p>
-      <p class="bg-gray-50 border border-gray-300 text-indigo-500 text-sm rounded-lg focus:ring-violet-300 focus:border-violet-300 block w-full p-2.5" placeholder="Enter your email address"><%= f.email_field :email %></p>
+      <p class="block mb-2 text-xl font-medium text-indigo-600 dark:text-white">
+        <%= f.label :email %>
+      </p>
+      <p class="bg-gray-50 border border-gray-300 text-indigo-500 text-sm rounded-lg focus:ring-violet-300 focus:border-violet-300 block w-full p-2.5" placeholder="Enter your email address">
+        <%= f.email_field :email %>
+      </p>
     </div>
 
     <div class="mb-6">
-      <p class="block mb-2 text-xl font-medium text-indigo-600 dark:text-white"><%= f.label :password %></p>
-      <p class="bg-gray-50 border border-gray-300 text-indigo-500 text-sm rounded-lg focus:ring-violet-300 focus:border-violet-300 block w-full p-2.5" placeholder="Choose a password"><%= f.password_field :password %></p>
+      <p class="block mb-2 text-xl font-medium text-indigo-600 dark:text-white">
+        <%= f.label :password %>
+      </p>
+      <p class="bg-gray-50 border border-gray-300 text-indigo-500 text-sm rounded-lg focus:ring-violet-300 focus:border-violet-300 block w-full p-2.5" placeholder="Choose a password">
+        <%= f.password_field :password %>
+      </p>
     </div>
 
-    <div class="text-white text-base bg-indigo-400 hover:bg-violet-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center p-10"><%= f.submit(@user.new_record? ? "Sign up" : "Update account") %>
+    <div class="text-white text-base bg-indigo-400 hover:bg-violet-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg w-full sm:w-auto px-5 py-2.5 text-center p-10">
+      <%= f.submit(@user.new_record? ? "Sign up" : "Update account") %>
     </div>
   <% end %>
 </div>
