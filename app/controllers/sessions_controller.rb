@@ -10,14 +10,14 @@ class SessionsController < ApplicationController
       flash[:notice] = "Logged in successfully"
       redirect_to user
     else
-      flash.now[:alert] = "There was something wrong with your login details"
+      flash.now[:alert] = "There was something wrong with your login details."
       render 'new'
     end
   end
 
   def destroy
     session[:user_id] = nil
-    flash[:notice] = "Logged out"
+    flash[:notice] = "You have successfully logged out."
     redirect_to root_path
   end
 

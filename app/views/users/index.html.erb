@@ -31,10 +31,11 @@
           <button type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium focus:outline-none rounded-lg text-indigo-700 hover:bg-indigo-300 border border-gray-200 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
             <%= link_to 'View profile', user %>
           </button>
-
-          <button type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium focus:outline-none rounded-lg text-indigo-700 hover:bg-indigo-300 border border-gray-200 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-            <%= link_to 'Edit profile', edit_user_path(user) %>
-          </button>
+          <% if logged_in? && user == current_user %>
+            <button type="button" class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium focus:outline-none rounded-lg text-indigo-700 hover:bg-indigo-300 border border-gray-200 hover:text-white focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+              <%= link_to 'Edit profile', edit_user_path(user) %>
+            </button>
+          <% end %>
 
         </div>  
       </div>

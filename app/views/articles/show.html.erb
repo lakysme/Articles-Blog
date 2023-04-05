@@ -11,10 +11,12 @@
 </div>
 
   <div class="flex space-x-4 justify-center text-indigo-500 text-xl font-mono my-10 mb-72">
-    <p class="hover:text-indigo-500/50 "><%= link_to 'Edit', edit_article_path(@article) %></p>
-    <p> | </p>
-    <p class="hover:text-indigo-500/50 "><%= link_to 'Delete', article_path(@article),  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></p>
-    <p> | </p>
+    <% if logged_in? && @article.user == current_user %>
+      <p class="hover:text-indigo-500/50 "><%= link_to 'Edit', edit_article_path(@article) %></p>
+      <p> | </p>
+      <p class="hover:text-indigo-500/50 "><%= link_to 'Delete', article_path(@article),  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></p>
+      <p> | </p>
+    <% end %>
     <p class="hover:text-indigo-500/50 "><%= link_to 'Return to articles listing', articles_path %></p>
   </div>
 
