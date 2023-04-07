@@ -7,44 +7,44 @@
     </div>
     <div class="lg:flex flex-grow items-center" id="example-navbar-warning">
       <ul class="flex flex-col lg:flex-row list-none ml-auto">
-          <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-white hover:opacity-75" href="/articles">
-              All articles
-            </a>
-          </li>
-          <% if logged_in? %>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-white hover:opacity-75" href="/articles">
+            All articles
+          </a>
+        </li>
+        <% if logged_in? %>
           <li class="nav-item">
             <a class="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-white hover:opacity-75" href="/articles/new">
               New article
             </a>
           </li>
-          <% end %>
+        <% end %>
+        <li class="nav-item">
+          <a class="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-white hover:opacity-75" href="/users">
+             Bloggers
+          </a>
+        </li>
+        <% if logged_in? %>
           <li class="nav-item">
-            <a class="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-white hover:opacity-75" href="/users">
-              Bloggers
+            <button type="button" class="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-white hover:opacity-75"><%= "(Admin)-" if current_user.admin? %><%= link_to current_user.username, user_path(current_user) %></button>
+          </li>
+          <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-white hover:opacity-75" href="/logout">
+              Log out
             </a>
           </li>
-          <% if logged_in? %>
-            <li class="nav-item">
-                <button type="button" class="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-white hover:opacity-75"><%= "(Admin)-" if current_user.admin? %><%= link_to current_user.username, user_path(current_user) %></button>
-            </li>
-            <li class="nav-item">
-              <a class="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-white hover:opacity-75" href="/logout">
-                Log out
-              </a>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <a class="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-white hover:opacity-75" href="/login">
-                Log in
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="px-3 py-1 flex text-xl uppercase font-bold leading-snug text-white border rounded-full bg-indigo-700/25 hover:bg-indigo-600" href="/signup">
-                Sign up!
-              </a>
-            </li>
-          <% end %>
+        <% else %>
+          <li class="nav-item">
+            <a class="px-3 py-2 flex items-center text-base uppercase font-bold leading-snug text-white hover:opacity-75" href="/login">
+              Log in
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="px-3 py-1 flex text-xl uppercase font-bold leading-snug text-white border rounded-full bg-indigo-700/25 hover:bg-indigo-600" href="/signup">
+               Sign up!
+            </a>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
