@@ -48,6 +48,8 @@ gem "bootsnap", require: false
 #gem pagination
 gem 'will_paginate', '~> 3.3'
 
+gem 'rexml', require: false
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
