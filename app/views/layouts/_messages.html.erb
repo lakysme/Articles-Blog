@@ -1,11 +1,11 @@
 <% flash.each do |name, msg| %>
   <% if name == "notice" %>
-    <div class= "container justify-center mx-auto mb-4 p-5 text-l text-green-600 bg-green-200/50 rounded-lg" role="alert">
+    <div class= "container justify-center mx-auto mb-4 p-5 text-l text-green-600 bg-green-200/50 rounded-lg">
     <%= msg %>
     </div>
   <% end %>
   <% if name == "alert" %>
-    <div class= "container justify-center mx-auto mb-4 p-5 text-l text-red-600 bg-red-200/50 rounded-lg" role="alert">
+    <div class= "container justify-center mx-auto mb-4 p-5 text-l text-red-600 bg-red-200/50 rounded-lg">
     <%= msg %>
     </div>
   <% end %>
