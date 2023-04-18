@@ -1,0 +1,23 @@
+<h1 class="flex justify-center mb-10 text-3xl text-indigo-700 mt-9 font-mono">Categories</h1>
+
+<div class="flex justify-center tracking-widest text-indigo-700  font-mono text-xl">
+  <%= will_paginate @categories, :container => false %>
+</div>
+
+<% @categories.each do |category| %>
+  <div class="container mx-auto my-4 w-1/3 bg-white border border-gray-200 rounded-lg shadow">
+    <div class="p-5">
+      <p class="text-center mb-2 text-2xl font-bold tracking-tight text-indigo-700 dark:text-white hover:underline hover:text-indigo-400">
+        <%= link_to category.name, category_path(category) %>
+      </p>
+
+      <p class="mb-3 font-normal text-sm text-center italic text-indigo-700">Created <%= time_ago_in_words(category.created_at) %> ago,
+        edited <%= time_ago_in_words(category.updated_at) %> ago
+      </p>  
+    </div>
+  </div>
+<% end %>
+
+<div class="flex justify-center tracking-widest text-indigo-700  font-mono text-xl">
+  <%= will_paginate @categories, :container => false %>
+</div>
