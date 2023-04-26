@@ -1,4 +1,4 @@
-<div class="container justify-center mx-auto  m-10 text-m text-left text-gray-500 dark:text-gray-400">
+<div class="container justify-center mx-auto m-10 text-m text-left text-gray-500 dark:text-gray-400">
   <%= render 'shared/errors', obj: @article %>
   <%= form_with(model: @article, local: true) do |f| %>
     <div class="p-5">
@@ -16,6 +16,15 @@
       </p>
       <p class="block w-full p-2 text-indigo-800 border-none bg-violet-300/25 sm:text-xs">
         <%= f.text_area :description %>
+      </p>
+    </div>
+
+    <div class="p-5 pb-10">
+      <p class="text-indigo-800 text-xl text-center">
+        <%= f.label :category %>
+      </p>
+      <p class="text-indigo-800 text-xl text-center">
+        <%= f.collection_select(:category_ids, Category.all, :id, :name, { prompt: "Please Select a category for your article. (can be empty)"}, { multiple: true, size:3, class: "text-indigo-800 text-xl text-center bg-violet-300/25 mx-auto" })  %>
       </p>
     </div>
 
