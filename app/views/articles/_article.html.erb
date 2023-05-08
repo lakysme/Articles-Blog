@@ -11,6 +11,12 @@
         By <%= link_to article.user.username, user_path(article.user) %>
       </p>
 
+      <p class="flex justify-center text-base">
+      <% if article.categories.any? %>
+        <div class=""><%= render article.categories %></div>
+      <% end %>
+      </p>
+
       <p class="mb-3 font-normal text-sm text-center italic text-indigo-700">Created <%= time_ago_in_words(article.created_at) %> ago,
         edited <%= time_ago_in_words(article.updated_at) %> ago
       </p>
