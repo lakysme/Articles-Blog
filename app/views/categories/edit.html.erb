@@ -1,8 +1,8 @@
-<h1 class="flex justify-center text-3xl mt-9 text-indigo-500 font-mono">Create a new category</h1>
+<h1 class="flex justify-center text-3xl mt-9 text-indigo-500 font-mono">Edit category name</h1>
 <div class="w-full">  
     <%= render 'form' %>
     <div class="flex justify-center font-mono text-indigo-500 hover:text-indigo-500/50 text-xl my-10 mb-44">
-        <%= link_to 'Cancel and return to categories listing', categories_path %>
+        <%= link_to 'Cancel and return to category page', category_path(@category) %>
     </div>  
 </div>
 
