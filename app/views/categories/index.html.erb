@@ -9,6 +9,9 @@
     <div class="p-5">
       <p class="text-center mb-2 text-2xl font-bold tracking-tight text-indigo-700 dark:text-white hover:underline hover:text-indigo-400">
         <%= link_to category.name, category_path(category) %>
+        <p class="flex justify-center mb-3 font-normal text-indigo-700 truncate">
+          <%= pluralize(category.articles.count, "article") %>
+        </p>
       </p>
 
       <p class="mb-3 font-normal text-sm text-center italic text-indigo-700">Created <%= time_ago_in_words(category.created_at) %> ago,
